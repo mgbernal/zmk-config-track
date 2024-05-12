@@ -1,6 +1,6 @@
 file_format: "1"
-id: kyria_left
-name: kyria_left
+id: kyria
+name: kyria
 type: shield
 url: https://github.com/mgbernal/kyria_left/
 requires: [pro_micro]
