@@ -99,7 +99,7 @@
 
         tball1_mmv_ibl {
                 compatible = "zmk,input-behavior-listener";
-                device = <&TRACKBALL0>;
+                device = <&tball1>;
                 layers = <DEF NUM MSK LHB>;
 		evt-type = <INPUT_EV_REL>;
 		x-input-code = <INPUT_REL_X>;
@@ -109,7 +109,7 @@
         };
         tball1_msl_ibl {
                 compatible = "zmk,input-behavior-listener";
-                device = <&TRACKBALL0>;
+                device = <&tball1>;
                 layers = <MSC>;
                 evt-type = <INPUT_EV_REL>;
                 x-input-code = <INPUT_REL_MISC>;
