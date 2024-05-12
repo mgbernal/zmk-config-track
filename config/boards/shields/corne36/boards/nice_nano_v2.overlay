@@ -1,46 +1,68 @@
 #include <dt-bindings/led/led.h>
+// /*
+// &pinctrl {
+//     spi3_default: spi3_default {
+//         group1 {
+//             psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>;
+//         };
+//     };
 
-&pinctrl {
-    spi3_default: spi3_default {
-        group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>;
-        };
-    };
+//     spi3_sleep: spi3_sleep {
+//         group1 {
+//             psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>;
+//             low-power-enable;
+//         };
+//     };
+// };
+// */
+// &spi3 {
+//     compatible = "nordic,nrf-spim";
+//     status = "okay";
 
-    spi3_sleep: spi3_sleep {
-        group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>;
-            low-power-enable;
-        };
-    };
-};
+//     pinctrl-0 = <&spi3_default>;
+//     pinctrl-1 = <&spi3_sleep>;
+//     pinctrl-names = "default", "sleep";
 
-&spi3 {
-    compatible = "nordic,nrf-spim";
+//     led_strip: ws2812@0 {
+//         compatible = "worldsemi,ws2812-spi";
+
+//         /* SPI */
+//         reg = <0>; /* ignored, but necessary for SPI bindings */
+//         spi-max-frequency = <4000000>;
+
+//         /* WS2812 */
+//         chain-length = <10>; /* arbitrary; change at will */
+//         spi-one-frame = <0x70>;
+//         spi-zero-frame = <0x40>;
+
+//         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+//     };
+// };
+
+// / {
+//     chosen {
+//         zmk,underglow = &led_strip;
+//     };
+// };
+&qspi {
     status = "okay";
-
-    pinctrl-0 = <&spi3_default>;
-    pinctrl-1 = <&spi3_sleep>;
+    pinctrl-0 = <&qspi_default>;
+    pinctrl-1 = <&qspi_sleep>;
     pinctrl-names = "default", "sleep";
-
-    led_strip: ws2812@0 {
-        compatible = "worldsemi,ws2812-spi";
-
-        /* SPI */
-        reg = <0>; /* ignored, but necessary for SPI bindings */
-        spi-max-frequency = <4000000>;
-
-        /* WS2812 */
-        chain-length = <10>; /* arbitrary; change at will */
-        spi-one-frame = <0x70>;
-        spi-zero-frame = <0x40>;
-
-        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
-    };
-};
-
-/ {
-    chosen {
-        zmk,underglow = &led_strip;
+    p25q16h: p25q16h@0 {
+        compatible = "nordic,qspi-nor";
+        reg = <0>;
+        sck-frequency = <104000000>;
+        quad-enable-requirements = "S2B1v1";
+        jedec-id = [85 60 15];
+        sfdp-bfp = [
+            e5 20 f1 ff  ff ff ff 00  44 eb 08 6b  08 3b 80 bb
+            ee ff ff ff  ff ff 00 ff  ff ff 00 ff  0c 20 0f 52
+            10 d8 08 81
+        ];
+        size = <16777216>;
+        has-dpd;
+        t-enter-dpd = <3000>;
+        t-exit-dpd = <8000>;
     };
 };
