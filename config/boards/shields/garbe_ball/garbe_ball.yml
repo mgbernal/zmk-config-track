@@ -2,7 +2,7 @@ file_format: "1"
 id: garbe_ball
 name: garbe_ball
 type: shield
-url: https://github.com/badjeff/corne36/
+url: https://github.com/mgbernal/garbe_ball/
 requires: [pro_micro]
 exposes: []
 features:
