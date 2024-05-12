@@ -1,0 +1,37 @@
+if SHIELD_CORNE36_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "corne36"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_CORNE36_LEFT || SHIELD_CORNE36_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
+
+if SHIELD_CORNE36_TBALL0 || SHIELD_CORNE36_TBALL1
+
+config ZMK_SPLIT
+    default y
+
+endif
+
+if SHIELD_CORNE36_TPOINT0
+
+config ZMK_SPLIT
+    default y
+
+endif
+
+if SHIELD_CORNE36_TPAD0
+
+config ZMK_SPLIT
+    default y
+
+endif

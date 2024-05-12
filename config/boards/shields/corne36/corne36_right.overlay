@@ -1,0 +1,82 @@
+/*
+ * Copyright (c) 2020 Pete Johanson
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "corne36.dtsi"
+
+&default_transform {
+	col-offset = <5>;
+};
+
+&kscan0 {
+	col-gpios
+		= <&pro_micro 14 GPIO_ACTIVE_HIGH>
+		, <&pro_micro 15 GPIO_ACTIVE_HIGH>
+		, <&pro_micro 18 GPIO_ACTIVE_HIGH>
+		, <&pro_micro 19 GPIO_ACTIVE_HIGH>
+		, <&pro_micro 20 GPIO_ACTIVE_HIGH>
+		;
+};
+
+/{
+	chosen {
+		zmk,battery = &vbatt;
+	};
+	vbatt: vbatt {
+		compatible = "zmk,battery-voltage-divider";
+		io-channels = <&adc 2>;
+		output-ohms = <2000000>;
+		full-ohms = <(2000000 + 806000)>;
+	};
+};
+
+// #include "corne36__trackball_adns9800.dtsi"
+// #include "corne36__trackball_pmw3610.dtsi"
+// #include "corne36__trackpoint_ps2.dtsi"
+// #include "corne36__touchpad_cirque.dtsi"
+
+/ {
+	pd0: virtual_input_0 {
+		compatible = "zmk,virtual-input";
+	};
+	pd1: virtual_input_1 {
+		compatible = "zmk,virtual-input";
+	};
+	tball0: virtual_input_tb_1 {
+		compatible = "zmk,virtual-input";
+	};
+	tball1: virtual_input_tb_2 {
+		compatible = "zmk,virtual-input";
+	};
+	tpoint0: virtual_input_tp {
+		compatible = "zmk,virtual-input";
+	};
+	tpad0: virtual_input_gp {
+		compatible = "zmk,virtual-input";
+	};
+	// input_relay_config_102 {
+	// 	compatible = "zmk,split-peripheral-input-relay";
+	// 	device = <&pd0>;
+	// 	relay-channel = <102>;
+	// };
+};
+
+// &s_encoder {
+//     status = "okay";
+// };
+// &sensors {
+// 		status = "okay";
+// 		sensors = <&s_encoder>;
+// };
+
+// #include "corne36__haptic_drv2605.dtsi"
+/{
+	fb_lra0: fb_lra0 {
+		compatible = "zmk,output-haptic-feedback";
+		#binding-cells = <0>;
+		// driver = "drv2605";
+		// device = <&drv2605_0>;
+	};
+};
