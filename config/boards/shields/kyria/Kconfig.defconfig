@@ -1,2 +1,9 @@
+if SHIELD_KIRYA_LEFT
+
 config ZMK_KEYBOARD_NAME
-    default "kyria"
+    default "Kyria_track"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
