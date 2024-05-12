@@ -1,0 +1,7 @@
+config ZMK_KEYBOARD_NAME
+    default "garbe_ball"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+

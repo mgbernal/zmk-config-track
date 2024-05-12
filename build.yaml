@@ -29,6 +29,8 @@ include:
   - board: seeeduino_xiao_ble
     shield: corne36_tpad0
 
+ - board: nice_nano_v2
+    shield: garbe_ball
  # - board: nice_nano_v2
  #   shield: nano18_left
  # - board: nice_nano_v2
