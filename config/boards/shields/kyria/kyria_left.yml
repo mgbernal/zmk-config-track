@@ -1,11 +1,11 @@
 file_format: "1"
-id: garbe_ball
-name: garbe_ball
+id: kyria_left
+name: kyria_left
 type: shield
-url: https://github.com/mgbernal/garbe_ball/
+url: https://github.com/mgbernal/kyria_left/
 requires: [pro_micro]
 exposes: []
 features:
   - keys
 siblings:
-  - garbe_ball
+  - kyria_left
