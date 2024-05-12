@@ -95,29 +95,11 @@
         //         bindings = <&ib_wheel_scaler 1 25>;
         // };
 
-        tball0_mmv_ibl {
-                compatible = "zmk,input-behavior-listener";
-                device = <&tball0>;
-                layers = <DEF NUM MSK LHB>;
-		evt-type = <INPUT_EV_REL>;
-		x-input-code = <INPUT_REL_X>;
-		y-input-code = <INPUT_REL_Y>;
-                // bindings = <&ib_tog_layer MSK>;
-        };
-        tball0_msl_ibl {
-                compatible = "zmk,input-behavior-listener";
-                device = <&tball0>;
-                layers = <MSC>;
-                evt-type = <INPUT_EV_REL>;
-                x-input-code = <INPUT_REL_MISC>;
-                y-input-code = <INPUT_REL_WHEEL>;
-                y-invert;
-                bindings = <&ib_wheel_scaler 1 25>;
-        };
+
 
         tball1_mmv_ibl {
                 compatible = "zmk,input-behavior-listener";
-                device = <&tball1>;
+                device = <&TRACKBALL0>;
                 layers = <DEF NUM MSK LHB>;
 		evt-type = <INPUT_EV_REL>;
 		x-input-code = <INPUT_REL_X>;
@@ -127,7 +109,7 @@
         };
         tball1_msl_ibl {
                 compatible = "zmk,input-behavior-listener";
-                device = <&tball1>;
+                device = <&TRACKBALL0>;
                 layers = <MSC>;
                 evt-type = <INPUT_EV_REL>;
                 x-input-code = <INPUT_REL_MISC>;
@@ -136,51 +118,7 @@
                 bindings = <&ib_wheel_scaler 1 25>;
         };
 
-        tpoint0_mmv_ibl {
-                compatible = "zmk,input-behavior-listener";
-                device = <&tpoint0>;
-                layers = <DEF NUM MSK LHB>;
-	        evt-type = <INPUT_EV_REL>;
-	        x-input-code = <INPUT_REL_X>;
-	        y-input-code = <INPUT_REL_Y>;
-                y-invert;
-                // bindings = <&ib_tog_layer MSK>;
-        };
-        tpoint0_msl_ibl {
-                compatible = "zmk,input-behavior-listener";
-                device = <&tpoint0>;
-                layers = <MSC>;
-                evt-type = <INPUT_EV_REL>;
-                x-input-code = <INPUT_REL_MISC>;
-                y-input-code = <INPUT_REL_WHEEL>;
-                bindings = <&ib_wheel_scaler 1 23>;
-        };
 
-        tpad0_mmv_ibl {
-                compatible = "zmk,input-behavior-listener";
-                device = <&tpad0>;
-                layers = <DEF NUM MSK LHB>;
-	        scale-multiplier = <5>;
-	        scale-divisor = <4>;
-                // bindings = <&ib_tog_layer MSK>;
-                // bindings = <&ib_fwd_to_hid_io>;
-                y-invert;
-                /* NOTE: do NOT override event code here, */
-                /*       let Cirque glidepoint reports click from taps */
-		// evt-type = <INPUT_EV_REL>;
-	        // x-input-code = <INPUT_REL_X>;
-	        // y-input-code = <INPUT_REL_Y>;
-        };
-        tpad0_msl_ibl {
-                compatible = "zmk,input-behavior-listener";
-                device = <&tpad0>;
-                layers = <MSC>;
-                /* NOTE: only apply input-code overriding for INPUT_EV_REL */
-                evt-type = <INPUT_EV_REL>;
-                x-input-code = <INPUT_REL_MISC>;
-                y-input-code = <INPUT_REL_WHEEL>;
-                bindings = <&ib_wheel_scaler 1 8>;
-        };
 
         ib_wheel_scaler: ib_wheel_scaler {
                 compatible = "zmk,input-behavior-scaler";
