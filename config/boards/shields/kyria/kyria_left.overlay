@@ -52,6 +52,10 @@
 	// 	relay-channel = <106>;
 	// 	device = <&tpad0>;
 	// };
+	zmk_kscan {
+		columns = 1;
+		rows = 1;
+	};
 };
 
 #define INPUT_EV_KEY 0x01               /**< Key event */
