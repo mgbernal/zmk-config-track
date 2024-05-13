@@ -53,8 +53,8 @@
 	// 	device = <&tpad0>;
 	// };
 	zmk_kscan {
-		columns = 1;
-		rows = 1;
+		columns = <1>;
+		rows = <1>;
 	};
 };
 
