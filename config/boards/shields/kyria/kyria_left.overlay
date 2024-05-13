@@ -55,11 +55,11 @@
 	// 	relay-channel = <102>;
 	// 	device = <&pd1>;
 	// };
-	input_relay_config_103 {
-		compatible = "zmk,split-peripheral-input-relay";
-		relay-channel = <103>;
-		device = <&tball0>;
-	};
+	//input_relay_config_103 {
+	//	compatible = "zmk,split-peripheral-input-relay";
+	//	relay-channel = <103>;
+	//	device = <&tball0>;
+	//};
 	// input_relay_config_104 {
 	// 	compatible = "zmk,split-peripheral-input-relay";
 	// 	relay-channel = <104>;
