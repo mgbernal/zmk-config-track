@@ -136,3 +136,10 @@
 //		// device = <&drv2605_0>;
 //	};
 //};
+
+/ {
+    chosen {
+        zmk,underglow = &led_strip;
+    };
+};
+
