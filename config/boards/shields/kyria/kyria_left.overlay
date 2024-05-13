@@ -32,12 +32,12 @@
 // #include "corne36_tball0_adns9800.dtsi" 
 
 / {
-	pd0: virtual_input_0 {
-		compatible = "zmk,virtual-input";
-	};
-	pd1: virtual_input_1 {
-		compatible = "zmk,virtual-input";
-	};
+	//pd0: virtual_input_0 {
+	//	compatible = "zmk,virtual-input";
+	//};
+	//pd1: virtual_input_1 {
+	//	compatible = "zmk,virtual-input";
+	//};
 	// tball0: virtual_input_tb_1 {
 	// 	compatible = "zmk,virtual-input";
 	// };
@@ -50,11 +50,11 @@
 	//tpad0: virtual_input_gp {
 	//	compatible = "zmk,virtual-input";
 	//};
-	 input_relay_config_102 {
-	 	compatible = "zmk,split-peripheral-input-relay";
-	 	relay-channel = <102>;
-	 	device = <&pd1>;
-	 };
+	// input_relay_config_102 {
+	// 	compatible = "zmk,split-peripheral-input-relay";
+	// 	relay-channel = <102>;
+	// 	device = <&pd1>;
+	 //};
 	//input_relay_config_103 {
 	//	compatible = "zmk,split-peripheral-input-relay";
 	//	relay-channel = <103>;
