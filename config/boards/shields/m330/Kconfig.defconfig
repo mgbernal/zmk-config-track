@@ -1,16 +1,6 @@
-if SHIELD_KYRIA_LEFT
+if SHIELD_TUMKA36
 
 config ZMK_KEYBOARD_NAME
-    default "kyria"
-
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-endif
-
-if SHIELD_KYRIA_LEFT || SHIELD_KYRIA_RIGHT
-
-config ZMK_SPLIT
-    default y
+    default "m330"
 
 endif
